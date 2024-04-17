@@ -13,6 +13,13 @@ export const routes: Routes = [
         pathMatch: 'full'
       },
       {
+        path: 'tarea',
+        loadComponent: () => import('./tarea/tarea.component').then(m => m.TareaComponent),
+        data: {
+          title: 'Modulo Tarea'
+        }
+      },
+      {
         path: 'accordion',
         loadComponent: () => import('./accordion/accordions.component').then(m => m.AccordionsComponent),
         data: {

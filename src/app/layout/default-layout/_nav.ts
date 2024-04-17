@@ -35,6 +35,11 @@ export const navItems: INavData[] = [
     iconComponent: { name: 'cil-puzzle' },
     children: [
       {
+        name: 'Modulo Tarea',
+        url: '/base/tarea',
+        icon: 'nav-icon-bullet'
+      },
+      {
         name: 'Accordion',
         url: '/base/accordion',
         icon: 'nav-icon-bullet'

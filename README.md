@@ -230,3 +230,13 @@ copyright 2024 creativeLabs Łukasz Holeczek.
  
 Code released under [the MIT license](https://github.com/coreui/coreui-free-react-admin-template/blob/master/LICENSE).
 There is only one limitation you can't re-distribute the CoreUI as stock. You can’t do this if you modify the CoreUI. In the past, we faced some problems with persons who tried to sell CoreUI based templates.
+
+
+
+<!-- PASOS -->
+1. git clone
+2. npm install
+3. ng serve
+4. Crear componente: ng g c views/base/tarea
+5. Modificar las rutas: _nav.ts
+6. Crear el servicio: ng g s views/base/servicios/tarea
