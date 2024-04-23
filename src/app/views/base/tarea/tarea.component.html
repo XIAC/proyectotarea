@@ -1,9 +1,59 @@
-<h3>tarea works! EJEMPLO</h3>
+<c-row ngPreserveWhitespaces>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header>
+        <strong>FORMULARIO DE TAREAS</strong>
+      </c-card-header>
+      <c-card-body>
+        <form cForm>
+          <div class="mb-3">
+            <label cLabel for="titulo">Titulo</label>
+            <input cFormControl
+                   id="titulo"
+                   [(ngModel)]="tarea.titulo"
+                   placeholder="Ingrese titulo"
+                   name="titulo"
+                   type="text"
+            />
+          </div>
+          <div class="mb-3">
+            <label cLabel for="descripcion">Descripcion</label>
+            <textarea cFormControl id="descripcion" rows="3"
+              name="descripcion"
+              [(ngModel)]="tarea.descripcion"></textarea>
+          </div>
+          <div class="mb-3">
+            <label cLabel for="prioridad">Prioridad</label>
+            <input cFormControl id="prioridad" rows="3" type="number"
+              name="prioridad"
+              [(ngModel)]="tarea.prioridad"/>
+          </div>
+        </form>
+        <c-row>
+          <c-col>
+            <button (click)="agregarTarea()" cButton color="success">GUARDAR</button>
+          </c-col>
+        </c-row>
+      </c-card-body>
+    </c-card>
+  </c-col>
+</c-row>
+
 <button cButton class="me-1" color="primary" type="button" (click)="getTareasPorPrioridad()">
   Ordenar
 </button>
+<button cButton class="me-1" color="primary" type="button" (click)="getTareasPorPrioridad()">
+  Promedio de Notas
+</button>
 <ul cListGroup>
   @for (item of listaTareas; track item) {
-    <li cListGroupItem>{{ item.titulo }} - {{item.descripcion}}</li>
+    <li cListGroupItem>{{ item.titulo }} - {{item.descripcion}}
+      <button cButton class="me-1" color="warning" variant="outline" type="button" (click)="editarTarea(item)">
+        Editar
+      </button>
+      <button cButton class="me-1" color="danger" variant="ghost" type="button" (click)="eliminarTarea(item)">
+        Eliminar
+      </button>
+    </li>
   }
 </ul>
